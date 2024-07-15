@@ -9,61 +9,90 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/0/03/Logo_Mouloudia_Club_Algerois.png">
     <style>
-        /* Media Query pour les téléphones jusqu'à 576px de large */
-        @media (max-width: 576px) {
-            .logo img {
-                width: 40px; /* Réduire la taille du logo pour les petits écrans */
-            }
-
-            nav {
-                padding: 5px 0;
-            }
-
-            nav .navbar-nav {
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease-out;
-            }
-
-            nav.navbar-expand-md .navbar-toggler {
-                display: block;
-            }
-
-            nav.navbar-expand-md .navbar-collapse {
-                display: none;
-            }
-
-            nav.navbar-expand-md .navbar-toggler-icon {
-                color: white;
-            }
-
-            nav.navbar-expand-md .show {
-                max-height: 500px;
-            }
-
-            nav a {
-                color: #fff;
-                text-decoration: none;
-                padding: 10px 15px;
-                margin: 0 5px;
-                font-size: 14px;
-                display: block;
-                transition: background-color 0.3s;
-            }
-
-            nav a:hover {
-                background-color: rgba(255, 255, 255, 0.1);
-            }
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        
+        .navbar {
+            background-color: #343a40;
+        }
+        
+        .navbar-brand img {
+            width: 40px; /* Réduire la taille du logo pour les petits écrans */
+        }
+        
+        .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+        
+        .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .hero {
+            background-image: url('https://via.placeholder.com/1200x400');
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn-primary {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        
+        .btn-primary:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+        
+        .feature {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+        }
+        
+        .feature img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <!-- Replace with MCA logo URL -->
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container">
                 <a class="navbar-brand" href="#">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Logo_Mouloudia_Club_Algerois.png" alt="MCA Logo" class="logo img-fluid">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Logo_Mouloudia_Club_Algerois.png" alt="MCA Logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -87,8 +116,8 @@
                         </li>
                     </ul>
                 </div>
-            </nav>
-        </div>
+            </div>
+        </nav>
     </header>
 
     <section class="hero">
