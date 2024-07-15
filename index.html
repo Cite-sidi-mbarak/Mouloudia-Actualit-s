@@ -7,52 +7,50 @@
     <meta name="description" content="Sports News and Live Scores">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
-    <!-- Replace with actual path to your favicon -->
-    <link rel="icon" type="image/x-icon" href="file:https://upload.wikimedia.org/wikipedia/commons/0/03/Logo_Mouloudia_Club_Algerois.png">
+    <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/0/03/Logo_Mouloudia_Club_Algerois.png">
     <style>
         /* Media Query pour les téléphones jusqu'à 576px de large */
-@media (max-width: 576px) {
-    .logo img {
-        width: 80px; /* Réduire la taille du logo pour les petits écrans */
-    }
+        @media (max-width: 576px) {
+            .logo img {
+                width: 80px; /* Réduire la taille du logo pour les petits écrans */
+            }
 
-    nav {
-        padding: 5px 0;
-    }
+            nav {
+                padding: 5px 0;
+            }
 
-    nav a {
-        padding: 8px 12px; /* Ajuster la taille des liens de navigation */
-        font-size: 12px; /* Réduire la taille de police pour les liens */
-    }
+            nav a {
+                padding: 8px 12px; /* Ajuster la taille des liens de navigation */
+                font-size: 12px; /* Réduire la taille de police pour les liens */
+            }
 
-    .hero {
-        padding: 60px 0; /* Ajuster le rembourrage du héros pour les petits écrans */
-    }
+            .hero {
+                padding: 60px 0; /* Ajuster le rembourrage du héros pour les petits écrans */
+            }
 
-    .hero h1 {
-        font-size: 28px; /* Réduire la taille du titre du héros */
-        margin-bottom: 10px;
-    }
+            .hero h1 {
+                font-size: 28px; /* Réduire la taille du titre du héros */
+                margin-bottom: 10px;
+            }
 
-    .hero p {
-        font-size: 14px; /* Réduire la taille du texte du héros */
-        margin-bottom: 10px;
-    }
+            .hero p {
+                font-size: 14px; /* Réduire la taille du texte du héros */
+                margin-bottom: 10px;
+            }
 
-    .feature {
-        margin-bottom: 20px; /* Réduire l'espacement entre les fonctionnalités */
-    }
+            .feature {
+                margin-bottom: 20px; /* Réduire l'espacement entre les fonctionnalités */
+            }
 
-    .feature h2 {
-        font-size: 18px; /* Réduire la taille des titres des fonctionnalités */
-        margin-bottom: 8px;
-    }
+            .feature h2 {
+                font-size: 18px; /* Réduire la taille des titres des fonctionnalités */
+                margin-bottom: 8px;
+            }
 
-    .feature p {
-        font-size: 12px; /* Réduire la taille du texte des fonctionnalités */
-    }
-}
-
+            .feature p {
+                font-size: 12px; /* Réduire la taille du texte des fonctionnalités */
+            }
+        }
     </style>
 </head>
 <body>
@@ -60,23 +58,40 @@
         <div class="container">
             <!-- Replace with MCA logo URL -->
             <div class="logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Logo_Mouloudia_Club_Algerois.png" alt="The Fotix Logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Logo_Mouloudia_Club_Algerois.png" alt="MCA Logo">
             </div>
-            <nav>
-                <a href="#">Home</a>
-                <a href="#">News</a>
-                <a href="#">Live Scores</a>
-                <a href="#">Videos</a>
-                <a href="#">Contact</a>
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Live Scores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Videos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <h1></h1>
-            <p></p>
-            <a href="#" class="btn btn-primary"></a>
+            <h1>Welcome to Mouloudia Actualités</h1>
+            <p>Your source for sports news and live scores</p>
+            <a href="#" class="btn btn-primary">Explore Now</a>
         </div>
     </section>
 
@@ -108,7 +123,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 The Footix. All rights reserved.</p>
+            <p>&copy; 2024 Mouloudia Actualités. All rights reserved.</p>
         </div>
     </footer>
 
@@ -117,4 +132,3 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
