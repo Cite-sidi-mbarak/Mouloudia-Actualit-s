@@ -19,36 +19,40 @@
                 padding: 5px 0;
             }
 
+            nav .navbar-nav {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+            }
+
+            nav.navbar-expand-md .navbar-toggler {
+                display: block;
+            }
+
+            nav.navbar-expand-md .navbar-collapse {
+                display: none;
+            }
+
+            nav.navbar-expand-md .navbar-toggler-icon {
+                color: white;
+            }
+
+            nav.navbar-expand-md .show {
+                max-height: 500px;
+            }
+
             nav a {
-                padding: 8px 12px; /* Ajuster la taille des liens de navigation */
-                font-size: 12px; /* Réduire la taille de police pour les liens */
+                color: #fff;
+                text-decoration: none;
+                padding: 10px 15px;
+                margin: 0 5px;
+                font-size: 14px;
+                display: block;
+                transition: background-color 0.3s;
             }
 
-            .hero {
-                padding: 60px 0; /* Ajuster le rembourrage du héros pour les petits écrans */
-            }
-
-            .hero h1 {
-                font-size: 28px; /* Réduire la taille du titre du héros */
-                margin-bottom: 10px;
-            }
-
-            .hero p {
-                font-size: 14px; /* Réduire la taille du texte du héros */
-                margin-bottom: 10px;
-            }
-
-            .feature {
-                margin-bottom: 20px; /* Réduire l'espacement entre les fonctionnalités */
-            }
-
-            .feature h2 {
-                font-size: 18px; /* Réduire la taille des titres des fonctionnalités */
-                margin-bottom: 8px;
-            }
-
-            .feature p {
-                font-size: 12px; /* Réduire la taille du texte des fonctionnalités */
+            nav a:hover {
+                background-color: rgba(255, 255, 255, 0.1);
             }
         }
     </style>
@@ -132,3 +136,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
