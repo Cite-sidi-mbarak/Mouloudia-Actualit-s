@@ -10,82 +10,49 @@
     <!-- Replace with actual path to your favicon -->
     <link rel="icon" type="image/x-icon" href="file:https://upload.wikimedia.org/wikipedia/commons/0/03/Logo_Mouloudia_Club_Algerois.png">
     <style>
-        /* Styles spécifiques à votre page */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .logo img {
-            width: 120px;
-            height: auto;
-        }
-        nav {
-            background-color: #444;
-            padding: 5px 0;
-            text-align: center;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 5px;
-            font-size: 16px;
-        }
-        .hero {
-            background-image: url('https://scontent.forn3-1.fna.fbcdn.net/v/t39.30808-6/442416163_451704310843459_2629018608985439161_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeG6I7I0SmH0F_ns_dsDqC6FAw0sler_BUUDDSyV6v8FRYPu7sP-nkFtsmM5M3daMJeTScQvFfa82Ffacb73YHQX&_nc_ohc=sX5XMA9Q_KsQ7kNvgGxUlYP&_nc_ht=scontent.forn3-1.fna&oh=00_AYC4wTO4fbcDGk4-XKZLs82BJX47YRFHtQW-0GJo5cT24Q&oe=669B19AF');
-            background-size: cover;
-            background-position: center;
-            color: #fff;
-            text-align: center;
-            padding: 100px 0;
-        }
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-        .feature {
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        .feature img {
-            max-width: 100%;
-            height: auto;
-        }
-        .feature h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        .feature p {
-            font-size: 16px;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
+        /* Media Query pour les téléphones jusqu'à 576px de large */
+@media (max-width: 576px) {
+    .logo img {
+        width: 80px; /* Réduire la taille du logo pour les petits écrans */
+    }
+
+    nav {
+        padding: 5px 0;
+    }
+
+    nav a {
+        padding: 8px 12px; /* Ajuster la taille des liens de navigation */
+        font-size: 12px; /* Réduire la taille de police pour les liens */
+    }
+
+    .hero {
+        padding: 60px 0; /* Ajuster le rembourrage du héros pour les petits écrans */
+    }
+
+    .hero h1 {
+        font-size: 28px; /* Réduire la taille du titre du héros */
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 14px; /* Réduire la taille du texte du héros */
+        margin-bottom: 10px;
+    }
+
+    .feature {
+        margin-bottom: 20px; /* Réduire l'espacement entre les fonctionnalités */
+    }
+
+    .feature h2 {
+        font-size: 18px; /* Réduire la taille des titres des fonctionnalités */
+        margin-bottom: 8px;
+    }
+
+    .feature p {
+        font-size: 12px; /* Réduire la taille du texte des fonctionnalités */
+    }
+}
+
     </style>
 </head>
 <body>
