@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouloudia Actualités - Contact Us</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="mca.png">
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        
+        .navbar {
+            background-color: #343a40;
+        }
+        
+        .navbar-brand img {
+            width: 60px; /* Adjust logo size for larger screens */
+        }
+        
+        .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+        
+        .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-section {
+            padding: 80px 0;
+        }
+        
+        .contact-form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-control {
+            margin-bottom: 15px;
+        }
+        
+        .form-control:focus {
+            border-color: #dc3545;
+            box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+        }
+        
+        .btn-primary {
+            background-color: #dc3545;
+            border-color: #dc3545;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+        
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #343a40;
+            color: #fff;
+        }
+        
+        body.dark-mode .navbar {
+            background-color: #212529;
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        body.dark-mode .contact-form {
+            background-color: #424242;
+            border-color: #757575;
+            color: #fff;
+        }
+        
+        body.dark-mode .form-control {
+            background-color: #212529;
+            border-color: #495057;
+            color: #fff;
+        }
+        
+        body.dark-mode .form-control:focus {
+            border-color: #dc3545;
+            box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+        }
+        
+        body.dark-mode .btn-primary {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        
+        body.dark-mode .btn-primary:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container">
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="mca.png" alt="MCA Logo">
+                </a>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Live Scores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Videos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-form">
+                        <h2 class="text-center mb-4">Contact Us</h2>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-4">
+        <p>&copy; 2024 Mouloudia Actualités. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Script to toggle dark mode and light mode
+        const body = document.body;
+
+        document.querySelector('.navbar-brand').addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>
