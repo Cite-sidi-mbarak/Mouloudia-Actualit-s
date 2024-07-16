@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mouloudia Actualités - Live Scores</title>
+    <title>Mouloudia Actualités - Videos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="mca.png">
@@ -34,11 +34,11 @@
             background-color: rgba(255, 255, 255, 0.1);
         }
         
-        .live-scores-section {
+        .videos-section {
             padding: 80px 0;
         }
         
-        .match {
+        .video-thumbnail {
             margin-bottom: 40px;
             background-color: #fff;
             padding: 20px;
@@ -46,34 +46,19 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         
-        .match h2 {
+        .video-thumbnail h2 {
             font-size: 2rem;
             margin-bottom: 10px;
         }
         
-        .match .teams {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .video-thumbnail .video-preview {
+            /* Style for video preview or thumbnail */
+            width: 100%;
+            height: auto;
             margin-bottom: 10px;
         }
         
-        .match .teams .team {
-            display: flex;
-            align-items: center;
-        }
-        
-        .match .teams .team img {
-            width: 40px;
-            margin-right: 10px;
-        }
-        
-        .match .score {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        .match .status {
+        .video-thumbnail .video-description {
             font-size: 1.1rem;
         }
         
@@ -95,13 +80,9 @@
             background-color: rgba(255, 255, 255, 0.1);
         }
         
-        body.dark-mode .match {
+        body.dark-mode .video-thumbnail {
             background-color: #424242;
             border-color: #757575;
-            color: #fff;
-        }
-        
-        body.dark-mode .match .score {
             color: #fff;
         }
     </style>
@@ -110,7 +91,7 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <a class="navbar-brand" href="#">
@@ -118,14 +99,14 @@
                 </a>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="news.html">News</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="live.html">Live Scores</a>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="live.html">Live Scores <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="video.html">Videos</a>
@@ -139,49 +120,31 @@
         </nav>
     </header>
 
-    <section class="live-scores-section">
+    <section class="videos-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <div class="match">
-                        <h2>Match Name 1</h2>
-                        <div class="teams">
-                            <div class="team">
-                                <img src="team1.png" alt="Team 1 Logo">
-                                <span>Team 1</span>
-                            </div>
-                            <div class="score">2 - 1</div>
-                            <div class="team">
-                                <span>Team 2</span>
-                                <img src="team2.png" alt="Team 2 Logo">
-                            </div>
-                        </div>
-                        <div class="status">In Progress</div>
+                    <div class="video-thumbnail">
+                        <h2>Video Title 1</h2>
+                        <img src="video1-thumbnail.jpg" alt="Video Thumbnail" class="video-preview">
+                        <p class="video-description">Description of the video goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <!-- Add video player or link here -->
                     </div>
-                    <div class="match">
-                        <h2>Match Name 2</h2>
-                        <div class="teams">
-                            <div class="team">
-                                <img src="team3.png" alt="Team 3 Logo">
-                                <span>Team 3</span>
-                            </div>
-                            <div class="score">0 - 0</div>
-                            <div class="team">
-                                <span>Team 4</span>
-                                <img src="team4.png" alt="Team 4 Logo">
-                            </div>
-                        </div>
-                        <div class="status">Scheduled</div>
+                    <div class="video-thumbnail">
+                        <h2>Video Title 2</h2>
+                        <img src="video2-thumbnail.jpg" alt="Video Thumbnail" class="video-preview">
+                        <p class="video-description">Another video description. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                        <!-- Add video player or link here -->
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="sidebar">
-                        <h3>Upcoming Matches</h3>
+                        <h3>Popular Videos</h3>
                         <ul class="list-unstyled">
-                            <li>Team A vs. Team B</li>
-                            <li>Team C vs. Team D</li>
-                            <li>Team E vs. Team F</li>
-                            <li>Team G vs. Team H</li>
+                            <li><a href="#">Video Title 1</a></li>
+                            <li><a href="#">Video Title 2</a></li>
+                            <li><a href="#">Video Title 3</a></li>
+                            <li><a href="#">Video Title 4</a></li>
                         </ul>
                     </div>
                 </div>
