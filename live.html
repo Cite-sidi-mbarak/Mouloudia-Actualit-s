@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouloudia Actualités - Live Scores</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="mca.png">
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        
+        .navbar {
+            background-color: #343a40;
+        }
+        
+        .navbar-brand img {
+            width: 60px; /* Adjust logo size for larger screens */
+        }
+        
+        .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+        
+        .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .live-scores-section {
+            padding: 80px 0;
+        }
+        
+        .match {
+            margin-bottom: 40px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .match h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .match .teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .match .teams .team {
+            display: flex;
+            align-items: center;
+        }
+        
+        .match .teams .team img {
+            width: 40px;
+            margin-right: 10px;
+        }
+        
+        .match .score {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .match .status {
+            font-size: 1.1rem;
+        }
+        
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #343a40;
+            color: #fff;
+        }
+        
+        body.dark-mode .navbar {
+            background-color: #212529;
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        body.dark-mode .match {
+            background-color: #424242;
+            border-color: #757575;
+            color: #fff;
+        }
+        
+        body.dark-mode .match .score {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="mca.png" alt="MCA Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Live Scores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Videos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="live-scores-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="match">
+                        <h2>Match Name 1</h2>
+                        <div class="teams">
+                            <div class="team">
+                                <img src="team1.png" alt="Team 1 Logo">
+                                <span>Team 1</span>
+                            </div>
+                            <div class="score">2 - 1</div>
+                            <div class="team">
+                                <span>Team 2</span>
+                                <img src="team2.png" alt="Team 2 Logo">
+                            </div>
+                        </div>
+                        <div class="status">In Progress</div>
+                    </div>
+                    <div class="match">
+                        <h2>Match Name 2</h2>
+                        <div class="teams">
+                            <div class="team">
+                                <img src="team3.png" alt="Team 3 Logo">
+                                <span>Team 3</span>
+                            </div>
+                            <div class="score">0 - 0</div>
+                            <div class="team">
+                                <span>Team 4</span>
+                                <img src="team4.png" alt="Team 4 Logo">
+                            </div>
+                        </div>
+                        <div class="status">Scheduled</div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar">
+                        <h3>Upcoming Matches</h3>
+                        <ul class="list-unstyled">
+                            <li>Team A vs. Team B</li>
+                            <li>Team C vs. Team D</li>
+                            <li>Team E vs. Team F</li>
+                            <li>Team G vs. Team H</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-4">
+        <p>&copy; 2024 Mouloudia Actualités. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Script to toggle dark mode and light mode
+        const body = document.body;
+
+        document.querySelector('.navbar-toggler').addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>
