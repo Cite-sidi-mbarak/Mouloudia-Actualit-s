@@ -164,10 +164,19 @@
     <script>
         // Script to toggle dark mode and light mode
         const body = document.body;
+        const navbarBrand = document.querySelector('.navbar-brand');
 
-        document.querySelector('.navbar-toggler').addEventListener('click', function() {
-            body.classList.toggle('dark-mode');
+        navbarBrand.addEventListener('click', function() {
+            // Toggle between light-mode and dark-mode classes
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+            }
         });
     </script>
 </body>
 </html>
+
