@@ -141,18 +141,14 @@
         
         footer img {
             width: 60px; /* Taille du logo MCA dans le pied de page */
-            margin-bottom: 10px;
+            margin-bottom: 10px; /* Espacement en bas du logo */
         }
 
-        /* Masquer le logo MCA sur les écrans petits */
-        @media (max-width: 1800px) {
+        /* Styles pour les petits écrans */
+        @media (max-width: 768px) {
             footer img {
-                display: none; /* Cacher le logo sur les petits écrans */
-            }
-            .footer-logo-small-screen {
-                display: block; /* Afficher le logo sur les petits écrans avec une classe spécifique */
-                width: 30px; /* Taille ajustée pour les petits écrans */
-                margin-bottom: 5px; /* Espacement pour les petits écrans */
+                width: 40px; /* Ajuster la taille du logo pour les petits écrans */
+                margin-bottom: 5px; /* Réduire l'espacement pour les petits écrans */
             }
         }
     </style>
@@ -283,9 +279,7 @@
     <!-- Footer Section -->
     <footer>
         <div class="container">
-            
             <img src="mca.png" alt="MCA Logo">
-          
         </div>
     </footer>
 
