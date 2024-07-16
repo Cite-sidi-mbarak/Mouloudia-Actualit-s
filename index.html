@@ -15,6 +15,7 @@
             font-family: Arial, sans-serif;
             background-color: #f8f9fa;
             color: #343a40;
+            transition: background-color 0.5s, color 0.5s;
         }
         
         .navbar {
@@ -130,6 +131,74 @@
             font-size: 1rem;
             margin-bottom: 20px;
         }
+        
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #343a40;
+            color: #fff;
+        }
+        
+        body.dark-mode .navbar {
+            background-color: #212529;
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        body.dark-mode .hero {
+            background-color: #343a40;
+            color: #fff;
+        }
+        
+        body.dark-mode .btn-primary {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        
+        body.dark-mode .btn-primary:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+        
+        body.dark-mode .feature {
+            background-color: #424242;
+            border-color: #757575;
+            color: #fff;
+        }
+        
+        body.dark-mode .feature p {
+            color: #e0e0e0;
+        }
+        
+        body.dark-mode .social-icons a {
+            color: #fff;
+        }
+        
+        body.dark-mode .social-icons a:hover {
+            color: #dc3545;
+        }
+        
+        body.dark-mode .authors-section {
+            background-color: #212529;
+        }
+        
+        body.dark-mode .authors-section .author {
+            border: 1px solid #495057;
+        }
+        
+        body.dark-mode .authors-section .author h3,
+        body.dark-mode .authors-section .author p {
+            color: #fff;
+        }
+        
+        body.dark-mode .authors-section .author img {
+            border-color: #495057;
+        }
     </style>
 </head>
 <body>
@@ -139,7 +208,7 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" id="logo" href="#">
                     <img src="mca.png" alt="MCA Logo">
                 </a>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -220,7 +289,11 @@
                         <img src="https://via.placeholder.com/150" alt="Author 1">
                         <h3>John Doe</h3>
                         <p>John is a passionate sports journalist covering football and basketball.</p>
-                       
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
@@ -228,7 +301,11 @@
                         <img src="https://via.placeholder.com/150" alt="Author 2">
                         <h3>Jane Smith</h3>
                         <p>Jane is an expert in tennis and motorsports, bringing you the latest updates.</p>
-                 
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mx-auto">
@@ -236,7 +313,11 @@
                         <img src="https://via.placeholder.com/150" alt="Author 3">
                         <h3>Michael Brown</h3>
                         <p>Michael covers rugby and golf with insightful analysis and commentary.</p>
-                    
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -246,5 +327,14 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Script pour activer le mode sombre et le mode clair
+        const logo = document.getElementById('logo');
+        const body = document.body;
+
+        logo.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+        });
+    </script>
 </body>
 </html>
