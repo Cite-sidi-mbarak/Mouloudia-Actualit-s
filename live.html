@@ -24,6 +24,7 @@
             width: 60px;
             margin-left: auto;
             margin-right: 10px;
+            cursor: pointer; /* Ajout pour montrer que le logo est cliquable */
         }
         
         .navbar-nav {
@@ -316,8 +317,8 @@
             body.classList.toggle('dark-mode');
         });
 
-        // Script for countdown timer until August 23, 2024, 20:00
-        const countdownDate = new Date('August 23, 2024 20:00:00').getTime();
+        // Script for countdown timer until August 16, 2024, 17:00
+        const countdownDate = new Date('August 16, 2024 17:00:00').getTime();
         const countdownElement = document.getElementById('countdown');
 
         const updateCountdown = () => {
@@ -329,7 +330,7 @@
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            countdownElement.textContent = ${days}j ${hours}h ${minutes}m ${seconds}s;
+            countdownElement.textContent = `${days}j ${hours}h ${minutes}m ${seconds}s`;
 
             if (distance < 0) {
                 clearInterval(interval);
@@ -341,4 +342,4 @@
         const interval = setInterval(updateCountdown, 1000);
     </script>
 </body>
-</html> 
+</html>
