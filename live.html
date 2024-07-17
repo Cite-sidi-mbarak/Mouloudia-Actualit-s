@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,35 +16,35 @@
             color: #343a40;
             transition: background-color 0.5s, color 0.5s;
         }
-        
+
         .navbar {
             background-color: #343a40;
         }
-        
+
         .navbar-brand img {
             width: 60px;
             margin-left: auto;
             margin-right: 10px;
         }
-        
+
         .navbar-nav {
             margin-left: 0;
         }
-        
+
         .navbar-dark .navbar-nav .nav-link {
             color: #fff;
             padding: 10px 15px;
             transition: background-color 0.3s;
         }
-        
+
         .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-        
+
         .live-scores-section {
             padding: 80px 0;
         }
-        
+
         .match {
             margin-bottom: 40px;
             background-color: #fff;
@@ -51,64 +52,64 @@
             border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         .match h2 {
             font-size: 2rem;
             margin-bottom: 10px;
         }
-        
+
         .match .teams {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 10px;
         }
-        
+
         .match .teams .team {
             display: flex;
             align-items: center;
         }
-        
+
         .match .teams .team img {
             width: 40px;
             height: 40px;
             margin-right: 10px;
             border-radius: 50%;
         }
-        
+
         .match .score {
             font-size: 1.5rem;
             font-weight: bold;
         }
-        
+
         .match .status {
             font-size: 1.1rem;
         }
-        
+
         /* Dark Mode Styles */
         body.dark-mode {
             background-color: #343a40;
             color: #fff;
         }
-        
+
         body.dark-mode .navbar {
             background-color: #212529;
         }
-        
+
         body.dark-mode .navbar-dark .navbar-nav .nav-link {
             color: #fff;
         }
-        
+
         body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-        
+
         body.dark-mode .match {
             background-color: #424242;
             border-color: #757575;
             color: #fff;
         }
-        
+
         body.dark-mode .match .score {
             color: #fff;
         }
@@ -118,24 +119,29 @@
             .navbar-brand img {
                 width: 40px;
             }
+
             .match h2 {
                 font-size: 1.5rem;
             }
+
             .match .teams {
                 flex-direction: column;
                 align-items: flex-start;
             }
+
             .match .teams .team img {
                 margin-bottom: 5px;
             }
         }
     </style>
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-brand ml-auto" href="#">
@@ -178,10 +184,11 @@
                             <div class="score">0 - 1</div>
                             <div class="team">
                                 <span>CR Belouizdad</span>
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/CRB-2022.png" alt="Team 2 Logo">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/CRB-2022.png"
+                                    alt="Team 2 Logo">
                             </div>
                         </div>
-                        <div class="status"> 
+                        <div class="status">
                             5 juillet 2024 à 17h00<br>
                             5 Juillet Stadium Algeria
                         </div>
@@ -231,7 +238,7 @@
         // Script to toggle dark mode and light mode
         const body = document.body;
 
-        document.querySelector('.navbar-brand').addEventListener('click', function() {
+        document.querySelector('.navbar-brand').addEventListener('click', function () {
             body.classList.toggle('dark-mode');
         });
 
@@ -260,4 +267,5 @@
         const interval = setInterval(updateCountdown, 1000);
     </script>
 </body>
+
 </html>
