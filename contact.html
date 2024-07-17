@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mouloudia Actualités - Contact Us</title>
-    <meta name="description" content="Contact Us Page">
+    <title>Contact Us - Mouloudia Actualités</title>
+    <meta name="description" content="Contact Us Page for Mouloudia Actualités">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Font Awesome -->
@@ -16,132 +16,123 @@
     <style>
         /* Global styles */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #343a40;
-            transition: background-color 0.5s, color 0.5s;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
         }
-        
+
         .navbar {
-            background-color: #343a40;
+            background-color: #e30613;
         }
-        
+
         .navbar-brand img {
-            width: 60px; /* Adjust logo size for larger screens */
+            width: 60px;
         }
-        
+
         .navbar-dark .navbar-nav .nav-link {
             color: #fff;
             padding: 10px 15px;
-            transition: background-color 0.3s;
         }
-        
+
         .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: #c00;
         }
-        
+
         .hero {
-            background-image: url('https://scontent.forn3-2.fna.fbcdn.net/v/t39.30808-6/451066709_487058103974746_579705500097469789_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHe_f2xRQ9iWyfKqU3-fg3lgnVtmUC8UxWCdW2ZQLxTFeHtiMg74gBHekrNgxgPOi0j4uXxDzFjF6JbSPf8_Ugd&_nc_ohc=x88oquL06YIQ7kNvgFV2eGu&_nc_ht=scontent.forn3-2.fna&oh=00_AYBou5dwRdD2ingQA4V2HJsIIxwGcmfxH1EZEYDQosua9g&oe=669C952F');
-            background-size: cover; /* Ensure the background covers the entire section */
-            background-position: center;
+            background-color: #e30613;
             color: #fff;
             text-align: center;
-            padding: 150px 0; /* Adjust padding for a larger height */
+            padding: 150px 0;
         }
-        
+
         @media (max-width: 768px) {
             .hero {
-                padding: 100px 0; /* Adjust for tablets and smaller screens */
+                padding: 100px 0;
             }
         }
-        
+
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
         }
-        
+
         .hero p {
             font-size: 1.5rem;
             margin-bottom: 30px;
         }
-        
+
         .btn-primary {
-            background-color: #dc3545;
-            border-color: #dc3545;
+            background-color: #e30613;
+            border-color: #e30613;
         }
-        
+
         .btn-primary:hover {
-            background-color: #c82333;
-            border-color: #bd2130;
+            background-color: #c00;
+            border-color: #c00;
         }
-        
+
         /* Section for Contact Information */
         .contact-section {
-            background-color: #f8f9fa; /* Lighter background */
-            color: #343a40; /* Darker text */
+            background-color: #fff;
             padding: 80px 0;
             text-align: center;
         }
-        
+
         .contact-section h2 {
-            font-size: 2rem; /* Slightly smaller heading */
-            margin-bottom: 20px;
-        }
-        
-        .contact-section p {
-            font-size: 1.1rem; /* Smaller paragraph text */
+            font-size: 2.5rem;
             margin-bottom: 30px;
+            color: #e30613;
         }
-        
+
+        .contact-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
         .contact-info {
             text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
         }
-        
+
         .contact-info p {
-            font-size: 1rem; /* Adjusted size for contact info */
+            font-size: 1rem;
             margin-bottom: 10px;
+            color: #555;
         }
-        
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #343a40;
-            color: #fff;
+
+        /* Section for Authors */
+        .authors-section {
+            background-color: #f0f0f0;
+            padding: 80px 0;
+            text-align: center;
         }
-        
-        body.dark-mode .navbar {
-            background-color: #212529;
+
+        .authors-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #333;
         }
-        
-        body.dark-mode .navbar-dark .navbar-nav .nav-link {
-            color: #fff;
+
+        .author {
+            margin-bottom: 30px;
         }
-        
-        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+
+        .author img {
+            max-width: 100%;
+            border-radius: 50%;
         }
-        
-        body.dark-mode .hero {
-            background-color: #343a40;
-            color: #fff;
+
+        .author h3 {
+            margin-top: 20px;
+            font-size: 1.8rem;
+            color: #e30613;
         }
-        
-        body.dark-mode .btn-primary {
-            background-color: #dc3545;
-            border-color: #dc3545;
-        }
-        
-        body.dark-mode .btn-primary:hover {
-            background-color: #c82333;
-            border-color: #bd2130;
-        }
-        
-        body.dark-mode .contact-section {
-            background-color: #343a40; /* Darker background */
-            color: #fff; /* Light text */
-        }
-        
-        body.dark-mode .contact-info p {
-            color: #fff; /* Lighter text for contact info */
+
+        .author p {
+            font-size: 1.2rem;
+            color: #555;
         }
     </style>
 </head>
@@ -149,12 +140,12 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="mca.png" alt="MCA Logo">
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" id="logo" href="#">
-                    <img src="mca.png" alt="MCA Logo">
-                </a>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
@@ -204,24 +195,24 @@
     <!-- Section for Authors -->
     <section class="authors-section">
         <div class="container">
-            <h2 class="text-center mb-5">Meet Our Authors</h2>
+            <h2 class="mb-5">Meet Our Authors</h2>
             <div class="row">
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-6">
                     <div class="author">
-                        <a href="https://www.facebook.com/mouloudianiyouten.21.mca/photos?locale=fr_FR">
+                        <a href="#">
                             <img src="mca.png" class="img-fluid" alt="Admin">
                         </a>
                         <h3>Admin</h3>
-                        <p>Admin</p>
+                        <p>Administrator</p>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
+                <div class="col-lg-6">
                     <div class="author">
-                        <a href="https://www.facebook.com/abdouoooooooooooooooooooooooooooooooooooooooo/?locale=fr_FR">
-                            <img src="dev.jpg" class="img-fluid" alt="Développer">
+                        <a href="#">
+                            <img src="dev.jpg" class="img-fluid" alt="Developer">
                         </a>
                         <h3>Iliesso</h3>
-                        <p>développer</p>
+                        <p>Developer</p>
                     </div>
                 </div>
             </div>
@@ -233,7 +224,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        // Script to toggle dark mode
+        // Script to toggle dark mode (optional)
         const logo = document.getElementById('logo');
         const body = document.body;
 
@@ -243,3 +234,4 @@
     </script>
 </body>
 </html>
+
