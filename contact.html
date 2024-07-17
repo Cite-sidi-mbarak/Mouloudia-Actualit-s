@@ -3,29 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <!-- Bootstrap CSS -->
+    <title>Mouloudia Actualités - Contact</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Styles personnalisés -->
-    <link rel="stylesheet" href="styles.css"> <!-- Assurez-vous que styles.css contient les styles globaux comme décrits précédemment -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="mca.png">
     <style>
-        /* Styles CSS personnalisés ici */
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        
+        .navbar {
+            background-color: #343a40;
+        }
+        
+        .navbar-brand img {
+            width: 60px;
+            margin-left: auto;
+            margin-right: 10px;
+        }
+        
+        .navbar-nav {
+            margin-left: 0;
+        }
+        
+        .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+        
+        .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #343a40;
+            color: #fff;
+        }
+        
+        body.dark-mode .navbar {
+            background-color: #212529;
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                width: 40px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <!-- Navbar Bootstrap -->
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="#">
-                    <img id="navbar-logo" src="mca-light.png" alt="MCA Logo" style="width: 60px;">
-                </a>
-         
+                <div class="navbar-brand ml-auto" href="#">
+                    <img src="mca.png" alt="MCA Logo">
+                </div>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
@@ -83,33 +135,15 @@
         <p>&copy; 2024 Mouloudia Actualités. All rights reserved.</p>
     </footer>
 
-    <!-- jQuery, Popper.js, Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        // Script pour basculer entre le mode sombre et le mode normal
+        // Script to toggle dark mode and light mode
         const body = document.body;
-        const navbarLogo = document.getElementById('navbar-logo');
 
-        // Toggle du mode sombre
-        document.querySelector('.navbar-toggler').addEventListener('click', function() {
+        document.querySelector('.navbar-brand').addEventListener('click', function() {
             body.classList.toggle('dark-mode');
-            if (body.classList.contains('dark-mode')) {
-                navbarLogo.src = 'mca-dark.png'; // Changer vers le logo sombre
-            } else {
-                navbarLogo.src = 'mca-light.png'; // Changer vers le logo clair
-            }
-        });
-
-        // Toggle du mode sombre en cliquant sur le logo
-        navbarLogo.addEventListener('click', function() {
-            body.classList.toggle('dark-mode');
-            if (body.classList.contains('dark-mode')) {
-                navbarLogo.src = 'mca-dark.png'; // Changer vers le logo sombre
-            } else {
-                navbarLogo.src = 'mca-light.png'; // Changer vers le logo clair
-            }
         });
     </script>
 </body>
