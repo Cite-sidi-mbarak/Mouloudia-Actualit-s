@@ -4,13 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mouloudia Actualités - Live Scores</title>
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="mca.png">
-    <!-- Inline styles for additional customization -->
     <style>
         /* Global styles */
         body {
@@ -45,27 +41,26 @@
         }
         
         .live-scores-section {
-            padding: 40px 0;
+            padding: 80px 0;
         }
         
         .match {
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             background-color: #fff;
-            padding: 15px;
+            padding: 20px;
             border-radius: 5px;
-            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         
         .match h2 {
-            font-size: 1.5rem;
+            font-size: 2rem;
             margin-bottom: 10px;
-            color: #343a40;
         }
         
         .match .teams {
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
             margin-bottom: 10px;
         }
         
@@ -75,34 +70,19 @@
         }
         
         .match .teams .team img {
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
             border-radius: 50%;
-            margin-right: 5px;
         }
         
         .match .score {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: bold;
-            color: #343a40;
         }
         
         .match .status {
-            font-size: 0.9rem;
-            color: #6c757d;
-        }
-        
-        .sidebar {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .sidebar h3 {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            color: #343a40;
+            font-size: 1.1rem;
         }
         
         /* Dark Mode Styles */
@@ -132,18 +112,34 @@
         body.dark-mode .match .score {
             color: #fff;
         }
-        
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                width: 40px;
+            }
+            .match h2 {
+                font-size: 1.5rem;
+            }
+            .match .teams {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .match .teams .team img {
+                margin-bottom: 5px;
+            }
+        }
+
         /* Table styles */
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
-            margin-bottom: 20px;
         }
         
         table th, table td {
-            padding: 10px;
-            text-align: center;
+            padding: 12px;
+            text-align: left;
             border: 1px solid #ddd;
         }
         
@@ -155,15 +151,11 @@
         table td {
             background-color: #f8f9fa;
         }
-        
+
         /* Responsive table */
         @media (max-width: 768px) {
-            .match .teams {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .match .teams .team img {
-                margin-bottom: 5px;
+            table {
+                font-size: 14px;
             }
         }
     </style>
@@ -209,13 +201,13 @@
                         <h2>Last Match</h2>
                         <div class="teams">
                             <div class="team">
-                                <img src="MCA.png" alt="MC Alger">
+                                <img src="MCA.png" alt="Team 1 Logo">
                                 <span>MC Alger</span>
                             </div>
                             <div class="score">0 - 1</div>
                             <div class="team">
                                 <span>CR Belouizdad</span>
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/CRB-2022.png" alt="CRB">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/CRB-2022.png" alt="Team 2 Logo">
                             </div>
                         </div>
                         <div class="status"> 
@@ -227,13 +219,452 @@
                         <h2>Next Match</h2>
                         <div class="teams">
                             <div class="team">
-                                <img src="MCA.png" alt="MC Alger">
+                                <img src="MCA.png" alt="Team 3 Logo">
+                                <span>Watanga FC</span>
+                            </div>
+                            <div class="score">0 - 0</div>
+                            <div class="team">
+                                <span>MC Alger</span>
+                                <img src="MCA.png" alt="Team 4 Logo">
+                            </div>
+                        </div>
+                        <div class="status">
+                            16 août 2024 à 17h00 : <span id="countdown"></span> <br>
+                           To Define
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar">
+                        <h3>Upcoming Matches</h3>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Match</th>
+                                        <th>Date & Time</th>
+                                        <th>Venue</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="MCA.png" alt="Watanga FC Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                 MC Alger vs. Watanga FC
+                                                <img src="wata.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">      
+                                            </div>
+                                        </td>
+                                        <td>23 août 2024 à 20h00</td>
+                                        <td>5 Juillet Stadium Algeria</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="jsk.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                JS Kabylie vs. MC Alger
+                                                <img src="MCA.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+
+                                            </div>
+                                        </td>
+                                        <td>Date To Be Defined</td>
+                                        <td>To Define</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="MCA.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                MC Alger vs. Paradou AC
+                                                  <img src="pac.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                            </div>
+                                        </td>
+                                        <td>Date to be defined</td>
+                                        <td>À définir</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="csc.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                CS Constantine vs. MC Alger
+                                      <img src="MCA.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                            </div>
+                                        </td>
+                                        <td>Date To Be Defined</td>
+                                        <td>To Define</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-4">
+        <p>&copy; 2024 Mouloudia Actualités. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Script to toggle dark mode and light mode
+        const body = document.body;
+
+        document.querySelector('.navbar-brand').addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+        });
+
+        // Script for countdown timer until August 23, 2024, 20:00
+        const countdownDate = new Date('August 23, 2024 20:00:00').getTime();
+        const countdownElement = document.getElementById('countdown');
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.textContent = ${days}j ${hours}h ${minutes}m ${seconds}s;
+
+            if (distance < 0) {
+                clearInterval(interval);
+                countdownElement.textContent = 'EXPIRED';
+            }
+        };
+
+        updateCountdown();
+        const interval = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html> separer les carous de tableu
+ChatGPT
+To improve the readability and structure of your HTML code, especially to separate the carousel from the table section, follow these steps:
+
+Identify Sections: The current HTML structure includes a header, a main section with live match information, and a sidebar with upcoming matches.
+
+Separate Sections: You can logically separate these sections using <div> elements with distinct identifiers or classes.
+
+Here's how you can structure your HTML to clearly separate these sections:
+
+html
+Copier le code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouloudia Actualités - Live Scores</title>
+    <!-- Your CSS and external libraries -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="mca.png">
+    <!-- Inline styles -->
+    <style>
+        /* Global styles */
+        /* Dark mode styles */
+        /* Media queries */
+        /* Table styles */
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Navbar section -->
+    </header>
+
+    <section class="live-scores-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Live match section -->
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar">
+                        <!-- Upcoming matches section -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="carousel-section">
+        <!-- Add carousel or any additional sections here -->
+    </section>
+
+    <footer class="text-center py-4">
+        <!-- Footer section -->
+    </footer>
+
+    <!-- JavaScript libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript scripts
+    </script>
+</body>
+</html>
+Steps to Separate Carousels from Tables:
+Identify Carousel Section: Determine where you want to add the carousel (e.g., after the live match section).
+Create a New Section: Use a <section> tag with a class or ID to clearly delineate the carousel content.
+Add Carousel Content: Insert your carousel HTML and content within this new section.
+Update CSS: Ensure any specific styles related to the carousel are appropriately managed in your <style> section or CSS file.
+By organizing your HTML in this way, you maintain clarity and structure, making it easier to manage and update your code in the future. This separation also enhances readability and helps in maintaining a modular approach to your webpage layout.
+
+full code
+ChatGPT
+Certainly! Here's the full HTML code with the separation of the carousel and the table sections, organized into distinct sections for clarity:
+
+html
+Copier le code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouloudia Actualités - Live Scores</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="mca.png">
+    <!-- Inline styles for additional customization -->
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        
+        .navbar {
+            background-color: #343a40;
+        }
+        
+        .navbar-brand img {
+            width: 60px;
+            margin-left: auto;
+            margin-right: 10px;
+        }
+        
+        .navbar-nav {
+            margin-left: 0;
+        }
+        
+        .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+        
+        .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .live-scores-section {
+            padding: 80px 0;
+        }
+        
+        .match {
+            margin-bottom: 40px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .match h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .match .teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .match .teams .team {
+            display: flex;
+            align-items: center;
+        }
+        
+        .match .teams .team img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        
+        .match .score {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .match .status {
+            font-size: 1.1rem;
+        }
+        
+        .sidebar {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .sidebar h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #343a40;
+            color: #fff;
+        }
+        
+        body.dark-mode .navbar {
+            background-color: #212529;
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        body.dark-mode .match {
+            background-color: #424242;
+            border-color: #757575;
+            color: #fff;
+        }
+        
+        body.dark-mode .match .score {
+            color: #fff;
+        }
+        
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                width: 40px;
+            }
+            .match h2 {
+                font-size: 1.5rem;
+            }
+            .match .teams {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .match .teams .team img {
+                margin-bottom: 5px;
+            }
+        }
+        
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        
+        table th {
+            background-color: #343a40;
+            color: #fff;
+        }
+        
+        table td {
+            background-color: #f8f9fa;
+        }
+        
+        /* Responsive table */
+        @media (max-width: 768px) {
+            table {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-brand ml-auto" href="#">
+                    <img src="mca.png" alt="MCA Logo">
+                </div>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html">News</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="live.html">Live Scores <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="video.html">Videos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="live-scores-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="match">
+                        <h2>Last Match</h2>
+                        <div class="teams">
+                            <div class="team">
+                                <img src="MCA.png" alt="Team 1 Logo">
+                                <span>MC Alger</span>
+                            </div>
+                            <div class="score">0 - 1</div>
+                            <div class="team">
+                                <span>CR Belouizdad</span>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/CRB-2022.png" alt="Team 2 Logo">
+                            </div>
+                        </div>
+                        <div class="status"> 
+                            5 juillet 2024 à 17h00<br>
+                            5 Juillet Stadium Algeria
+                        </div>
+                    </div>
+                    <div class="match">
+                        <h2>Next Match</h2>
+                        <div class="teams">
+                            <div class="team">
+                                <img src="MCA.png" alt="Team 3 Logo">
                                 <span>MC Alger</span>
                             </div>
                             <div class="score">0 - 0</div>
                             <div class="team">
                                 <span>Watanga FC</span>
-                                <img src="wata.png" alt="Watanga FC">
+                                <img src="wata.png" alt="Team 4 Logo">
                             </div>
                         </div>
                         <div class="status">
@@ -258,9 +689,9 @@
                                     <tr>
                                         <td>
                                             <div class="team">
-                                                <img src="wata.png" alt="Watanga FC">
-                                                <span>Watanga FC vs. MC Alger</span>
-                                                <img src="MCA.png" alt="MC Alger">
+                                                <img src="wata.png" alt="Watanga FC Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                Watanga FC vs. MC Alger
+                                                <img src="MCA.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">      
                                             </div>
                                         </td>
                                         <td>23 août 2024 à 20h00</td>
@@ -269,9 +700,9 @@
                                     <tr>
                                         <td>
                                             <div class="team">
-                                                <img src="jsk.png" alt="JS Kabylie">
-                                                <span>JS Kabylie vs. MC Alger</span>
-                                                <img src="MCA.png" alt="MC Alger">
+                                                <img src="jsk.png" alt="JS Kabylie Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                JS Kabylie vs. MC Alger
+                                                <img src="MCA.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
                                             </div>
                                         </td>
                                         <td>Date à définir</td>
@@ -280,9 +711,9 @@
                                     <tr>
                                         <td>
                                             <div class="team">
-                                                <img src="MCA.png" alt="MC Alger">
-                                                <span>MC Alger vs. Paradou AC</span>
-                                                <img src="pac.png" alt="Paradou AC">
+                                                <img src="MCA.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                MC Alger vs. Paradou AC
+                                                <img src="pac.png" alt="Paradou AC Logo" style="width: 30px; height: 30px; margin-right: 10px;">
                                             </div>
                                         </td>
                                         <td>Date à définir</td>
@@ -291,9 +722,9 @@
                                     <tr>
                                         <td>
                                             <div class="team">
-                                                <img src="csc.png" alt="CS Constantine">
-                                                <span>CS Constantine vs. MC Alger</span>
-                                                <img src="MCA.png" alt="MC Alger">
+                                                <img src="csc.png" alt="CS Constantine Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                CS Constantine vs. MC Alger
+                                                <img src="MCA.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
                                             </div>
                                         </td>
                                         <td>Date à définir</td>
@@ -343,6 +774,394 @@
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             countdownElement.textContent = `${days}j ${hours}h ${minutes}m ${seconds}s`;
+
+            if (distance < 0) {
+                clearInterval(interval);
+                countdownElement.textContent = 'EXPIRED';
+            }
+        };
+
+        updateCountdown();
+        const interval = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
+Explanation:
+Structure: The HTML is divided into several sections (header, live-scores-section, carousel-section, and footer) for clear separation of content.
+Styles: CSS styles are included in <style> tags in the <head> section, providing both global styles and specific styles for different sections (like dark mode, media queries, and table styles).
+JavaScript: JavaScript at the end handles toggling dark mode and implements a countdown timer until August 23, 2024, 20:00.
+Ensure to replace placeholder images (MCA.png, CRB-2022.png, wata.png, etc.) with actual image URLs or paths for your project. This structure allows for easy maintenance and scalability of your web project.
+
+api key de site sofascoore
+ChatGPT
+I'm sorry for any confusion, but as of my last update in January 2022, I don't have access to real-time or current external APIs or their keys. If you're looking for the API key for a specific service like Sofascore, you typically need to register on their platform or website and follow their documentation to obtain an API key. Here’s a general guide on how you might obtain an API key from Sofascore:
+
+Visit Sofascore's Website: Go to Sofascore's website and look for their developer or API section.
+
+Sign Up or Log In: You may need to create an account or log into your existing account on Sofascore.
+
+Explore API Documentation: Look for API documentation or developer resources. This typically provides detailed information on how to use their API, including how to obtain an API key.
+
+Generate API Key: Follow the instructions in their documentation to generate an API key. This often involves creating a new application or project within your account and receiving a unique API key associated with that application.
+
+Usage: Once you have the API key, you can start using it in your application to fetch data from Sofascore’s API endpoints.
+
+If you encounter any specific issues or need further assistance, I recommend checking Sofascore’s official documentation or support channels for the most accurate and up-to-date information on obtaining and using their API key.
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouloudia Actualités - Live Scores</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="mca.png">
+    <!-- Inline styles for additional customization -->
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        
+        .navbar {
+            background-color: #343a40;
+        }
+        
+        .navbar-brand img {
+            width: 60px;
+            margin-left: auto;
+            margin-right: 10px;
+        }
+        
+        .navbar-nav {
+            margin-left: 0;
+        }
+        
+        .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+        
+        .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .live-scores-section {
+            padding: 80px 0;
+        }
+        
+        .match {
+            margin-bottom: 40px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .match h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .match .teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .match .teams .team {
+            display: flex;
+            align-items: center;
+        }
+        
+        .match .teams .team img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        
+        .match .score {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .match .status {
+            font-size: 1.1rem;
+        }
+        
+        .sidebar {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .sidebar h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #343a40;
+            color: #fff;
+        }
+        
+        body.dark-mode .navbar {
+            background-color: #212529;
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        body.dark-mode .match {
+            background-color: #424242;
+            border-color: #757575;
+            color: #fff;
+        }
+        
+        body.dark-mode .match .score {
+            color: #fff;
+        }
+        
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                width: 40px;
+            }
+            .match h2 {
+                font-size: 1.5rem;
+            }
+            .match .teams {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .match .teams .team img {
+                margin-bottom: 5px;
+            }
+        }
+        
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        
+        table th {
+            background-color: #343a40;
+            color: #fff;
+        }
+        
+        table td {
+            background-color: #f8f9fa;
+        }
+        
+        /* Responsive table */
+        @media (max-width: 768px) {
+            table {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-brand ml-auto" href="#">
+                    <img src="mca.png" alt="MCA Logo">
+                </div>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html">News</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="live.html">Live Scores <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="video.html">Videos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="live-scores-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="match">
+                        <h2>Last Match</h2>
+                        <div class="teams">
+                            <div class="team">
+                                <img src="MCA.png" alt="Team 1 Logo">
+                                <span>MC Alger</span>
+                            </div>
+                            <div class="score">0 - 1</div>
+                            <div class="team">
+                                <span>CR Belouizdad</span>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/CRB-2022.png" alt="Team 2 Logo">
+                            </div>
+                        </div>
+                        <div class="status"> 
+                            5 juillet 2024 à 17h00<br>
+                            5 Juillet Stadium Algeria
+                        </div>
+                    </div>
+                    <div class="match">
+                        <h2>Next Match</h2>
+                        <div class="teams">
+                            <div class="team">
+                                <img src="MCA.png" alt="Team 3 Logo">
+                                <span>MC Alger</span>
+                            </div>
+                            <div class="score">0 - 0</div>
+                            <div class="team">
+                                <span>Watanga FC</span>
+                                <img src="wata.png" alt="Team 4 Logo">
+                            </div>
+                        </div>
+                        <div class="status">
+                            23 août 2024 à 20h00 : <span id="countdown"></span> <br>
+                            5 Juillet Stadium Algeria
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar">
+                        <h3>Upcoming Matches</h3>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Match</th>
+                                        <th>Date & Time</th>
+                                        <th>Venue</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="wata.png" alt="Watanga FC Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                Watanga FC vs. MC Alger
+                                                <img src="MCA.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">      
+                                            </div>
+                                        </td>
+                                        <td>23 août 2024 à 20h00</td>
+                                        <td>5 Juillet Stadium Algeria</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="jsk.png" alt="JS Kabylie Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                JS Kabylie vs. MC Alger
+                                                <img src="MCA.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                            </div>
+                                        </td>
+                                        <td>Date à définir</td>
+                                        <td>À définir</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="MCA.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                MC Alger vs. Paradou AC
+                                                <img src="pac.png" alt="Paradou AC Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                            </div>
+                                        </td>
+                                        <td>Date à définir</td>
+                                        <td>À définir</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="csc.png" alt="CS Constantine Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                CS Constantine vs. MC Alger
+                                                <img src="MCA.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                            </div>
+                                        </td>
+                                        <td>Date à définir</td>
+                                        <td>À définir</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="carousel-section">
+        <!-- Add your carousel here -->
+    </section>
+
+    <footer class="text-center py-4">
+        <p>&copy; 2024 Mouloudia Actualités. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script>
+        // Script to toggle dark mode and light mode
+        const body = document.body;
+
+        document.querySelector('.navbar-brand').addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+        });
+
+        // Script for countdown timer until August 23, 2024, 20:00
+        const countdownDate = new Date('August 23, 2024 20:00:00').getTime();
+        const countdownElement = document.getElementById('countdown');
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.textContent = ${days}j ${hours}h ${minutes}m ${seconds}s;
 
             if (distance < 0) {
                 clearInterval(interval);
