@@ -5,109 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        /* Global styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #343a40;
-            transition: background-color 0.5s, color 0.5s;
-        }
-        
-        .navbar {
-            background-color: #343a40;
-        }
-        
-        .navbar-brand img {
-            width: 60px; /* Adjust logo size for larger screens */
-        }
-        
-        .navbar-dark .navbar-nav .nav-link {
-            color: #fff;
-            padding: 10px 15px;
-            transition: background-color 0.3s;
-        }
-        
-        .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        .contact-section {
-            padding: 80px 0;
-        }
-        
-        .contact-form {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .form-control {
-            margin-bottom: 15px;
-        }
-        
-        .form-control:focus {
-            border-color: #dc3545;
-            box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
-        }
-        
-        .btn-primary {
-            background-color: #dc3545;
-            border-color: #dc3545;
-            transition: background-color 0.3s;
-        }
-        
-        .btn-primary:hover {
-            background-color: #c82333;
-            border-color: #bd2130;
-        }
-        
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #343a40;
-            color: #fff;
-        }
-        
-        body.dark-mode .navbar {
-            background-color: #212529;
-        }
-        
-        body.dark-mode .navbar-dark .navbar-nav .nav-link {
-            color: #fff;
-        }
-        
-        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        body.dark-mode .contact-form {
-            background-color: #424242;
-            border-color: #757575;
-            color: #fff;
-        }
-        
-        body.dark-mode .form-control {
-            background-color: #212529;
-            border-color: #495057;
-            color: #fff;
-        }
-        
-        body.dark-mode .form-control:focus {
-            border-color: #dc3545;
-            box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
-        }
-        
-        body.dark-mode .btn-primary {
-            background-color: #dc3545;
-            border-color: #dc3545;
-        }
-        
-        body.dark-mode .btn-primary:hover {
-            background-color: #c82333;
-            border-color: #bd2130;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -149,51 +46,12 @@
                     <div class="contact-form">
                         <h2 class="text-center mb-4">Contact Us</h2>
                         <!-- Display feedback message here -->
-                        <?php
-                        // Handle form submission
-                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                            // Configuration de la base de données (à adapter selon votre environnement local)
-                            $servername = "localhost";
-                            $username = "root"; // Utilisateur MySQL
-                            $password = ""; // Mot de passe MySQL
-                            $dbname = "contact_form_db"; // Nom de la base de données créée
-
-                            // Création de la connexion
-                            $conn = new mysqli($servername, $username, $password, $dbname);
-
-                            // Vérifier la connexion
-                            if ($conn->connect_error) {
-                                die("La connexion à la base de données a échoué : " . $conn->connect_error);
-                            }
-
-                            // Récupérer les valeurs soumises dans le formulaire
-                            $name = $_POST['name'];
-                            $email = $_POST['email'];
-                            $message = $_POST['message'];
-                            
-                            // Préparer la requête d'insertion
-                            $sql = "INSERT INTO contact_messages (name, email, message) VALUES (?, ?, ?)";
-                            
-                            // Préparer la déclaration
-                            $stmt = $conn->prepare($sql);
-                            
-                            // Liage des paramètres et exécution de la requête
-                            $stmt->bind_param("sss", $name, $email, $message);
-                            
-                            if ($stmt->execute()) {
-                                // Redirection avec un message de succès
-                                echo '<div class="alert alert-success" role="alert">Votre message a été envoyé avec succès.</div>';
-                            } else {
-                                // Redirection avec un message d'erreur
-                                echo '<div class="alert alert-danger" role="alert">Désolé, il y a eu une erreur lors de l\'envoi du message.</div>';
-                            }
-
-                            // Fermer la connexion à la base de données
-                            $stmt->close();
-                            $conn->close();
-                        }
-                        ?>
-                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                        <?php if (isset($_GET['status'])) { ?>
+                            <div class="alert alert-<?php echo ($_GET['status'] == 'success') ? 'success' : 'danger'; ?>" role="alert">
+                                <?php echo $_GET['message']; ?>
+                            </div>
+                        <?php } ?>
+                        <form action="sendEmail.php" method="POST">
                             <div class="form-group">
                                 <input type="text" class="form-control" name="name" placeholder="Your Name" required>
                             </div>
