@@ -3,136 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Mouloudia Actualités</title>
-    <meta name="description" content="Contact Us Page for Mouloudia Actualités">
-    <!-- Bootstrap CSS -->
+    <title>Mouloudia Actualités - Contact Us</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="mca.png">
     <style>
         /* Global styles */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            transition: background-color 0.5s, color 0.5s;
         }
-
+        
         .navbar {
-            background-color: #e30613;
+            background-color: #343a40;
         }
-
+        
         .navbar-brand img {
-            width: 60px;
+            width: 60px; /* Adjust logo size for larger screens */
         }
-
+        
         .navbar-dark .navbar-nav .nav-link {
             color: #fff;
             padding: 10px 15px;
+            transition: background-color 0.3s;
         }
-
+        
         .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: #c00;
+            background-color: rgba(255, 255, 255, 0.1);
         }
-
-        .hero {
-            background-color: #e30613;
-            color: #fff;
-            text-align: center;
-            padding: 150px 0;
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                padding: 100px 0;
-            }
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-        }
-
-        .btn-primary {
-            background-color: #e30613;
-            border-color: #e30613;
-        }
-
-        .btn-primary:hover {
-            background-color: #c00;
-            border-color: #c00;
-        }
-
-        /* Section for Contact Information */
+        
         .contact-section {
-            background-color: #fff;
             padding: 80px 0;
-            text-align: center;
         }
-
-        .contact-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            color: #e30613;
-        }
-
-        .contact-section p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: #333;
-        }
-
-        .contact-info {
-            text-align: left;
-            max-width: 500px;
+        
+        .contact-form {
+            max-width: 600px;
             margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
-
-        .contact-info p {
-            font-size: 1rem;
-            margin-bottom: 10px;
-            color: #555;
-        }
-
-        /* Section for Authors */
-        .authors-section {
-            background-color: #f0f0f0;
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .authors-section h2 {
+        
+        .contact-form h2 {
             font-size: 2.5rem;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #343a40;
+        }
+        
+        .contact-form label {
+            font-weight: bold;
             color: #333;
         }
-
-        .author {
-            margin-bottom: 30px;
+        
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
-
-        .author img {
-            max-width: 100%;
-            border-radius: 50%;
+        
+        .contact-form textarea {
+            height: 150px;
         }
-
-        .author h3 {
-            margin-top: 20px;
-            font-size: 1.8rem;
-            color: #e30613;
+        
+        .contact-form button[type="submit"] {
+            background-color: #343a40;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
-
-        .author p {
-            font-size: 1.2rem;
-            color: #555;
+        
+        .contact-form button[type="submit"]:hover {
+            background-color: #555;
+        }
+        
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #343a40;
+            color: #fff;
+        }
+        
+        body.dark-mode .navbar {
+            background-color: #212529;
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        body.dark-mode .contact-form {
+            background-color: #424242;
+            color: #fff;
+            border-color: #757575;
         }
     </style>
 </head>
@@ -140,12 +116,12 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="mca.png" alt="MCA Logo">
-                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <a class="navbar-brand" href="#">
+                    <img src="mca.png" alt="MCA Logo">
+                </a>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
@@ -169,69 +145,55 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Contact Us</h1>
-            <p>Get in touch with us for any queries or feedback!</p>
-        </div>
-    </section>
-
     <section class="contact-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    <h2>Contact Information</h2>
-                    <p>Feel free to reach out to us using the contact information below:</p>
-                    <div class="contact-info">
-                        <p><strong>Address:</strong> Bab El Oued - Bazita, Alger</p>
-                        <p><strong>Phone:</strong> +1234567890</p>
-                        <p><strong>Email:</strong> mouloudiaactualites@gmail.com</p>
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="contact-form">
+                        <h2>Contact Us</h2>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section for Authors -->
-    <section class="authors-section">
-        <div class="container">
-            <h2 class="mb-5">Meet Our Authors</h2>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="author">
-                        <a href="#">
-                            <img src="mca.png" class="img-fluid" alt="Admin">
-                        </a>
-                        <h3>Admin</h3>
-                        <p>Administrator</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="author">
-                        <a href="#">
-                            <img src="dev.jpg" class="img-fluid" alt="Developer">
-                        </a>
-                        <h3>Iliesso</h3>
-                        <p>Developer</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <footer class="text-center py-4">
+        <p>&copy; 2024 Mouloudia Actualités. All rights reserved.</p>
+    </footer>
 
-    <!-- jQuery, Popper.js, Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        // Script to toggle dark mode (optional)
-        const logo = document.getElementById('logo');
+        // Script to toggle dark mode and light mode
         const body = document.body;
+        const navbarBrand = document.querySelector('.navbar-brand');
 
-        logo.addEventListener('click', function() {
-            body.classList.toggle('dark-mode');
+        navbarBrand.addEventListener('click', function() {
+            // Toggle between light-mode and dark-mode classes
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+            }
         });
     </script>
 </body>
 </html>
-
