@@ -21,7 +21,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <a class="navbar-brand" href="#">
-                    <img id="navbar-logo" src="mca-light.png" alt="MCA Logo" style="width: 60px;">
+                    <img id="navbar-logo" src="mca.png" alt="MCA Logo" style="width: 60px;">
                 </a>
          
                 <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -92,7 +92,18 @@
         const body = document.body;
         const navbarLogo = document.getElementById('navbar-logo');
 
+        // Toggle du mode sombre
         document.querySelector('.navbar-toggler').addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                navbarLogo.src = 'mca-dark.png'; // Changer vers le logo sombre
+            } else {
+                navbarLogo.src = 'mca-light.png'; // Changer vers le logo clair
+            }
+        });
+
+        // Toggle du mode sombre en cliquant sur le logo
+        navbarLogo.addEventListener('click', function() {
             body.classList.toggle('dark-mode');
             if (body.classList.contains('dark-mode')) {
                 navbarLogo.src = 'mca-dark.png'; // Changer vers le logo sombre
