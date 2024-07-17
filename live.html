@@ -45,26 +45,27 @@
         }
         
         .live-scores-section {
-            padding: 80px 0;
+            padding: 40px 0;
         }
         
         .match {
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             background-color: #fff;
-            padding: 20px;
+            padding: 15px;
             border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
         }
         
         .match h2 {
-            font-size: 2rem;
+            font-size: 1.5rem;
             margin-bottom: 10px;
+            color: #343a40;
         }
         
         .match .teams {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             margin-bottom: 10px;
         }
         
@@ -74,31 +75,34 @@
         }
         
         .match .teams .team img {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
+            margin-right: 5px;
         }
         
         .match .score {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: bold;
+            color: #343a40;
         }
         
         .match .status {
-            font-size: 1.1rem;
+            font-size: 0.9rem;
+            color: #6c757d;
         }
         
         .sidebar {
-            padding: 20px;
             background-color: #f8f9fa;
+            padding: 20px;
             border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
         }
         
         .sidebar h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #343a40;
         }
         
         /* Dark Mode Styles */
@@ -129,34 +133,17 @@
             color: #fff;
         }
         
-        /* Media Query for Mobile Devices */
-        @media (max-width: 768px) {
-            .navbar-brand img {
-                width: 40px;
-            }
-            .match h2 {
-                font-size: 1.5rem;
-            }
-            .match .teams {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .match .teams .team img {
-                margin-bottom: 5px;
-            }
-        }
-        
         /* Table styles */
         table {
-            width: 80%; /* Réduire la largeur du tableau */
-            margin: 0 auto; /* Centrer le tableau horizontalement */
+            width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            margin-bottom: 20px;
         }
         
         table th, table td {
-            padding: 12px;
-            text-align: center; /* Centrer le texte dans les cellules */
+            padding: 10px;
+            text-align: center;
             border: 1px solid #ddd;
         }
         
@@ -171,8 +158,12 @@
         
         /* Responsive table */
         @media (max-width: 768px) {
-            table {
-                font-size: 14px;
+            .match .teams {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .match .teams .team img {
+                margin-bottom: 5px;
             }
         }
     </style>
@@ -218,13 +209,13 @@
                         <h2>Last Match</h2>
                         <div class="teams">
                             <div class="team">
-                                <img src="MCA.png" alt="Team 1 Logo">
+                                <img src="MCA.png" alt="MC Alger">
                                 <span>MC Alger</span>
                             </div>
                             <div class="score">0 - 1</div>
                             <div class="team">
                                 <span>CR Belouizdad</span>
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/CRB-2022.png" alt="Team 2 Logo">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/CRB-2022.png" alt="CRB">
                             </div>
                         </div>
                         <div class="status"> 
@@ -236,13 +227,13 @@
                         <h2>Next Match</h2>
                         <div class="teams">
                             <div class="team">
-                                <img src="MCA.png" alt="Team 3 Logo">
+                                <img src="MCA.png" alt="MC Alger">
                                 <span>MC Alger</span>
                             </div>
                             <div class="score">0 - 0</div>
                             <div class="team">
                                 <span>Watanga FC</span>
-                                <img src="wata.png" alt="Team 4 Logo">
+                                <img src="wata.png" alt="Watanga FC">
                             </div>
                         </div>
                         <div class="status">
@@ -267,9 +258,9 @@
                                     <tr>
                                         <td>
                                             <div class="team">
-                                                <img src="wata.png" alt="Watanga FC Logo" style="width: 30px; height: 30px; margin-right: 10px;">
-                                                Watanga FC vs. MC Alger
-                                                <img src="MCA.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">      
+                                                <img src="wata.png" alt="Watanga FC">
+                                                <span>Watanga FC vs. MC Alger</span>
+                                                <img src="MCA.png" alt="MC Alger">
                                             </div>
                                         </td>
                                         <td>23 août 2024 à 20h00</td>
@@ -278,9 +269,9 @@
                                     <tr>
                                         <td>
                                             <div class="team">
-                                                <img src="jsk.png" alt="JS Kabylie Logo" style="width: 30px; height: 30px; margin-right: 10px;">
-                                                JS Kabylie vs. MC Alger
-                                                <img src="MCA.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                <img src="jsk.png" alt="JS Kabylie">
+                                                <span>JS Kabylie vs. MC Alger</span>
+                                                <img src="MCA.png" alt="MC Alger">
                                             </div>
                                         </td>
                                         <td>Date à définir</td>
@@ -289,9 +280,9 @@
                                     <tr>
                                         <td>
                                             <div class="team">
-                                                <img src="MCA.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
-                                                MC Alger vs. Paradou AC
-                                                <img src="pac.png" alt="Paradou AC Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                <img src="MCA.png" alt="MC Alger">
+                                                <span>MC Alger vs. Paradou AC</span>
+                                                <img src="pac.png" alt="Paradou AC">
                                             </div>
                                         </td>
                                         <td>Date à définir</td>
@@ -300,9 +291,9 @@
                                     <tr>
                                         <td>
                                             <div class="team">
-                                                <img src="csc.png" alt="CS Constantine Logo" style="width: 30px; height: 30px; margin-right: 10px;">
-                                                CS Constantine vs. MC Alger
-                                                <img src="MCA.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                <img src="csc.png" alt="CS Constantine">
+                                                <span>CS Constantine vs. MC Alger</span>
+                                                <img src="MCA.png" alt="MC Alger">
                                             </div>
                                         </td>
                                         <td>Date à définir</td>
