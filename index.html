@@ -104,7 +104,7 @@
         }
         
         .social-icons a:hover {
-            color: #b8b6b6; /* Icon color on hover */
+            color: #dc3545; /* Icon color on hover */
         }
         
         /* Section for Authors */
@@ -238,8 +238,10 @@
                     </ul>
                 </div>
                 <div class="icons ml-auto">
-                    <a href="#"><i class="fas fa-times"></i></a> <!-- Example of "X" icon -->
-                    <a href="#"><i class="fab fa-youtube"></i></a> <!-- YouTube icon -->
+                    <a href="https://www.facebook.com/MouloudiaActualites/" target="_blank"><i id="facebook-icon" class="fab fa-facebook-square"></i></a>
+                    <a href="https://www.instagram.com/mouloudia_actualites/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/MouloudiaActu" target="_blank"><i id="x-icon" class="fas fa-times"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </nav>
@@ -283,7 +285,7 @@
         <div class="container">
             <div class="row">
                 <div class="col text-center">
-                    <img src="mca2.jpg" class="img-fluid" alt="Image Description"> <!-- Added img-fluid class for responsiveness -->
+                    <img src="mca2.jpg" class="img-fluid" alt="Image Description">
                 </div>
             </div>
         </div>
@@ -292,11 +294,10 @@
     <!-- Section for Social Icons -->
     <section class="social-icons">
         <div class="container">
-            <a href="https://www.facebook.com/MouloudiaActualites/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://www.facebook.com/MouloudiaActualites/" target="_blank"><i id="facebook-icon" class="fab fa-facebook-square"></i></a>
             <a href="https://www.instagram.com/mouloudia_actualites/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/MouloudiaActu" target="_blank"><i class="fas fa-times"></i></a> <!-- Updated to "X" icon -->
-            <a href="#"><i class="fab fa-youtube"></i></a> <!-- YouTube icon -->
-            <!-- Add more social icons here if needed -->
+            <a href="https://twitter.com/MouloudiaActu" target="_blank"><i id="x-icon" class="fas fa-times"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
     </section>
 
@@ -308,7 +309,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="author">
                         <a href="https://www.facebook.com/profile.php?id=100094343603603&locale=fr_FR" target="_blank">
-                            <img src="mca.png" class="img-fluid" alt="Admin"> <!-- Added img-fluid class for responsiveness -->
+                            <img src="mca.png" class="img-fluid" alt="Admin">
                         </a>
                         <h3>Mohamed</h3>
                         <p>Admin</p>
@@ -317,7 +318,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="author">
                         <a href="https://www.facebook.com/abdouoooooooooooooooooooooooooooooooooooooooo/?locale=fr_FR" target="_blank">
-                            <img src="dev.jpg" class="img-fluid" alt="Développer"> <!-- Added img-fluid class for responsiveness -->
+                            <img src="dev.jpg" class="img-fluid" alt="Développer">
                         </a>
                         <h3>Iliesso</h3>
                         <p>développer</p>
@@ -338,6 +339,18 @@
 
         logo.addEventListener('click', function() {
             body.classList.toggle('dark-mode');
+        });
+
+        // Script to change icon colors on click
+        const facebookIcon = document.getElementById('facebook-icon');
+        const xIcon = document.getElementById('x-icon');
+
+        facebookIcon.addEventListener('click', function() {
+            facebookIcon.style.color = '#3b5998'; // Facebook blue color
+        });
+
+        xIcon.addEventListener('click', function() {
+            xIcon.style.color = '#000000'; // Black color
         });
     </script>
 </body>
