@@ -8,18 +8,214 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="mca.png">
     <style>
-        /* Your existing styles */
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        
+        .navbar {
+            background-color: #343a40;
+        }
+        
+        .navbar-brand img {
+            width: 60px;
+            margin-left: auto;
+            margin-right: 10px;
+        }
+        
+        .navbar-nav {
+            margin-left: 0;
+        }
+        
+        .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+        
+        .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .live-scores-section {
+            padding: 80px 0;
+        }
+        
+        .match {
+            margin-bottom: 40px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .match h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .match .teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .match .teams .team {
+            display: flex;
+            align-items: center;
+        }
+        
+        .match .teams .team img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        
+        .match .score {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .match .status {
+            font-size: 1.1rem;
+        }
+        
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #343a40;
+            color: #fff;
+        }
+        
+        body.dark-mode .navbar {
+            background-color: #212529;
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        body.dark-mode .match {
+            background-color: #424242;
+            border-color: #757575;
+            color: #fff;
+        }
+        
+        body.dark-mode .match .score {
+            color: #fff;
+        }
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                width: 40px;
+            }
+            .match h2 {
+                font-size: 1.5rem;
+            }
+            .match .teams {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .match .teams .team img {
+                margin-bottom: 5px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <!-- Your header code -->
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-brand ml-auto" href="#">
+                    <img src="mca.png" alt="MCA Logo">
+                </div>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html">News</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="live.html">Live Scores <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="video.html">Videos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <section class="live-scores-section">
         <div class="container">
-            <div class="row" id="liveScores">
-                <!-- Live scores will be dynamically inserted here -->
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="match" id="lastMatch">
+                        <h2>Last Match</h2>
+                        <div class="teams">
+                            <div class="team">
+                                <img src="MCA.png" alt="Team 1 Logo">
+                                <span>MC Alger</span>
+                            </div>
+                            <div class="score">0 - 1</div>
+                            <div class="team">
+                                <span>CR Belouizdad</span>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/CRB-2022.png" alt="Team 2 Logo">
+                            </div>
+                        </div>
+                        <div class="status"> 
+                            5 juillet 2024 à 17h00<br>
+                            5 Juillet Stadium Algeria
+                        </div>
+                    </div>
+                    <div class="match" id="nextMatch">
+                        <h2>Next Match</h2>
+                        <div class="teams">
+                            <div class="team">
+                                <img src="MCA.png" alt="Team 3 Logo">
+                                <span>MC Alger</span>
+                            </div>
+                            <div class="score">0 - 0</div>
+                            <div class="team">
+                                <span>Watanga FC</span>
+                                <img src="wata.png" alt="Team 4 Logo">
+                            </div>
+                        </div>
+                        <div class="status">
+                            23 août 2024 à 20h00 : <span id="countdown"></span> <br>
+                            5 Juillet Stadium Algeria
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar">
+                        <h3>Upcoming Matches</h3>
+                        <ul class="list-unstyled">
+                            <li>Watanga FC vs. MC Alger</li>
+                            <li>Khenchla vs. MC Alger</li>
+                            <li>MC Alger vs. MC Oran</li>
+                            <li>CS Constantine vs. MC Alger</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -32,39 +228,36 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const apiEndpoint = 'http://api2.isportsapi.com/sport/football/livescores?api_key=<kvIgsxLujLZluz4O>t'; // Replace with your API endpoint
-            const apiKey = 'kvIgsxLujLZluz4O'; // Replace with your API key
+        // Script to toggle dark mode and light mode
+        const body = document.body;
 
-            fetch(`${apiEndpoint}?api_key=${kvIgsxLujLZluz4O}`)
-                .then(response => response.json())
-                .then(data => {
-                    const liveScoresElement = document.getElementById('liveScores');
-                    data.forEach(match => {
-                        const matchHtml = `
-                            <div class="col-lg-6">
-                                <div class="match">
-                                    <h2>${match.team1} vs ${match.team2}</h2>
-                                    <div class="teams">
-                                        <div class="team">
-                                            <img src="${match.team1_logo}" alt="${match.team1}">
-                                            <span>${match.team1}</span>
-                                        </div>
-                                        <div class="score">${match.score}</div>
-                                        <div class="team">
-                                            <span>${match.team2}</span>
-                                            <img src="${match.team2_logo}" alt="${match.team2}">
-                                        </div>
-                                    </div>
-                                    <div class="status">${match.date} at ${match.time}</div>
-                                </div>
-                            </div>
-                        `;
-                        liveScoresElement.innerHTML += matchHtml;
-                    });
-                })
-                .catch(error => console.error('Error fetching live scores:', error));
+        document.querySelector('.navbar-brand').addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
         });
+
+        // Script for countdown timer until August 23, 2024, 20:00
+        const countdownDate = new Date('August 23, 2024 20:00:00').getTime();
+        const countdownElement = document.getElementById('countdown');
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.textContent = `${days}j ${hours}h ${minutes}m ${seconds}s`;
+
+            if (distance < 0) {
+                clearInterval(interval);
+                countdownElement.textContent = 'EXPIRED';
+            }
+        };
+
+        updateCountdown();
+        const interval = setInterval(updateCountdown, 1000);
     </script>
 </body>
 </html>
