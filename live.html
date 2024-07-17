@@ -157,21 +157,13 @@
         }
         
         /* Responsive table */
-        @media (max-width: 992px) {
+        @media (max-width: 768px) {
             .match .teams {
                 flex-direction: column;
                 align-items: flex-start;
             }
             .match .teams .team img {
                 margin-bottom: 5px;
-            }
-            .table-responsive {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                -ms-overflow-style: -ms-autohiding-scrollbar;
-                border: 1px solid #dee2e6;
-                border-radius: .25rem;
-                padding: .5rem;
             }
         }
     </style>
@@ -223,12 +215,12 @@
                             <div class="score">0 - 1</div>
                             <div class="team">
                                 <span>CR Belouizdad</span>
-                                <img src="CRB.png" alt="CR Belouizdad">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/CRB-2022.png" alt="CRB">
                             </div>
                         </div>
                         <div class="status"> 
-                            5 July 2024 at 17:00<br>
-                            5 July Stadium, Algeria
+                            5 juillet 2024 à 17h00<br>
+                            5 Juillet Stadium Algeria
                         </div>
                     </div>
                     <div class="match">
@@ -241,12 +233,12 @@
                             <div class="score">0 - 0</div>
                             <div class="team">
                                 <span>Watanga FC</span>
-                                <img src="Watanga.png" alt="Watanga FC">
+                                <img src="wata.png" alt="Watanga FC">
                             </div>
                         </div>
                         <div class="status">
-                            23 August 2024 at 20:00 : <span id="countdown"></span> <br>
-                            5 July Stadium, Algeria
+                            23 août 2024 à 20h00 : <span id="countdown"></span> <br>
+                            5 Juillet Stadium Algeria
                         </div>
                     </div>
                 </div>
@@ -266,24 +258,24 @@
                                     <tr>
                                         <td>
                                             <div class="team">
-                                                <img src="Watanga.png" alt="Watanga FC">
+                                                <img src="wata.png" alt="Watanga FC">
                                                 <span>Watanga FC vs. MC Alger</span>
                                                 <img src="MCA.png" alt="MC Alger">
                                             </div>
                                         </td>
-                                        <td>23 August 2024 at 20:00</td>
-                                        <td>5 July Stadium, Algeria</td>
+                                        <td>23 août 2024 à 20h00</td>
+                                        <td>5 Juillet Stadium Algeria</td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <div class="team">
-                                                <img src="JSK.png" alt="JS Kabylie">
+                                                <img src="jsk.png" alt="JS Kabylie">
                                                 <span>JS Kabylie vs. MC Alger</span>
                                                 <img src="MCA.png" alt="MC Alger">
                                             </div>
                                         </td>
-                                        <td>Date to be determined</td>
-                                        <td>To be determined</td>
+                                        <td>Date à définir</td>
+                                        <td>À définir</td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -293,8 +285,8 @@
                                                 <img src="pac.png" alt="Paradou AC">
                                             </div>
                                         </td>
-                                        <td>Date to be determined</td>
-                                        <td>To be determined</td>
+                                        <td>Date à définir</td>
+                                        <td>À définir</td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -304,8 +296,8 @@
                                                 <img src="MCA.png" alt="MC Alger">
                                             </div>
                                         </td>
-                                        <td>Date to be determined</td>
-                                        <td>To be determined</td>
+                                        <td>Date à définir</td>
+                                        <td>À définir</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -314,6 +306,10 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <section class="carousel-section">
+        <!-- Add your carousel here -->
     </section>
 
     <footer class="text-center py-4">
@@ -346,7 +342,7 @@
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            countdownElement.textContent = `${days}j ${hours}h ${minutes}m ${seconds}s`;
 
             if (distance < 0) {
                 clearInterval(interval);
