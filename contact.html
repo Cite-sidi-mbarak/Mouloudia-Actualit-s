@@ -6,120 +6,24 @@
     <title>Contact Us</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Styles personnalisés -->
     <style>
-        /* Global styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #343a40;
-            transition: background-color 0.5s, color 0.5s;
-        }
-        
-        .navbar {
-            background-color: #343a40;
-        }
-        
-        .navbar-brand img {
-            width: 60px; /* Adjust logo size for larger screens */
-        }
-        
-        .navbar-dark .navbar-nav .nav-link {
-            color: #fff;
-            padding: 10px 15px;
-            transition: background-color 0.3s;
-        }
-        
-        .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        .contact-section {
-            padding: 80px 0;
-        }
-        
-        .contact-form {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .form-control {
-            margin-bottom: 15px;
-        }
-        
-        .form-control:focus {
-            border-color: #dc3545;
-            box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
-        }
-        
-        .btn-primary {
-            background-color: #dc3545;
-            border-color: #dc3545;
-            transition: background-color 0.3s;
-        }
-        
-        .btn-primary:hover {
-            background-color: #c82333;
-            border-color: #bd2130;
-        }
-        
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #343a40;
-            color: #fff;
-        }
-        
-        body.dark-mode .navbar {
-            background-color: #212529;
-        }
-        
-        body.dark-mode .navbar-dark .navbar-nav .nav-link {
-            color: #fff;
-        }
-        
-        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        body.dark-mode .contact-form {
-            background-color: #424242;
-            border-color: #757575;
-            color: #fff;
-        }
-        
-        body.dark-mode .form-control {
-            background-color: #212529;
-            border-color: #495057;
-            color: #fff;
-        }
-        
-        body.dark-mode .form-control:focus {
-            border-color: #dc3545;
-            box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
-        }
-        
-        body.dark-mode .btn-primary {
-            background-color: #dc3545;
-            border-color: #dc3545;
-        }
-        
-        body.dark-mode .btn-primary:hover {
-            background-color: #c82333;
-            border-color: #bd2130;
-        }
+        /* Styles CSS personnalisés ici */
     </style>
 </head>
 <body>
     <header>
+        <!-- Navbar Bootstrap -->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="mca.png" alt="MCA Logo" style="width: 60px;">
                 </a>
+                <!-- Bouton de basculement Bootstrap -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <!-- Menu de navigation Bootstrap -->
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
@@ -147,15 +51,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
+                    <!-- Formulaire de contact Bootstrap -->
                     <div class="contact-form">
                         <h2 class="text-center mb-4">Contact Us</h2>
-                        <!-- Display feedback message here -->
+                        <!-- Affichage du message de statut ici -->
                         <?php if (isset($_GET['status'])) { ?>
                             <div class="alert alert-<?php echo ($_GET['status'] == 'success') ? 'success' : 'danger'; ?>" role="alert">
                                 <?php echo $_GET['message']; ?>
                             </div>
                         <?php } ?>
-                        <form action="sendEmail.php" method="POST">
+                        <!-- Formulaire de contact -->
+                        <form action="sendEmail.php" method="post">
                             <div class="form-group">
                                 <input type="text" class="form-control" name="name" placeholder="Your Name" required>
                             </div>
@@ -182,7 +88,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        // Script to toggle dark mode and light mode
+        // Script pour basculer entre le mode sombre et le mode normal
         const body = document.body;
 
         document.querySelector('.navbar-brand').addEventListener('click', function() {
