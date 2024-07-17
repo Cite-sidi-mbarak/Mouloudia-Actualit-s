@@ -115,23 +115,30 @@
             color: #fff;
         }
 
-        /* Media Query for Mobile Devices */
-        @media (max-width: 768px) {
-            .navbar-brand img {
-                width: 40px;
-            }
+      @media (max-width: 768px) {
+    .navbar-brand img {
+        width: 40px;
+    }
 
-            .match .teams {
-                flex-direction: column;
-                align-items: flex-start;
-            }
+    .match .teams {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-            .match .teams .team img {
-                margin-bottom: 5px;
-            }
+    .match .teams .team {
+        margin-bottom: 10px; /* Ajout d'une marge entre les équipes */
+    }
 
-            .match .score {
-                margin-right: 0;
+    .match .score {
+        margin-right: 0;
+        margin-bottom: 10px; /* Ajout d'une marge sous le score */
+    }
+
+    .match .status {
+        margin-bottom: 20px; /* Ajout d'une marge sous le statut */
+    }
+}
+
             }
         }
     </style>
