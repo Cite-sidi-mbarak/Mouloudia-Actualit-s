@@ -1,12 +1,16 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mouloudia Actualités - Live Scores</title>
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="mca.png">
+    <!-- Inline styles for additional customization -->
     <style>
         /* Global styles */
         body {
@@ -85,6 +89,18 @@
             font-size: 1.1rem;
         }
         
+        .sidebar {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .sidebar h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
         /* Dark Mode Styles */
         body.dark-mode {
             background-color: #343a40;
@@ -112,7 +128,7 @@
         body.dark-mode .match .score {
             color: #fff;
         }
-
+        
         /* Media Query for Mobile Devices */
         @media (max-width: 768px) {
             .navbar-brand img {
@@ -129,7 +145,7 @@
                 margin-bottom: 5px;
             }
         }
-
+        
         /* Table styles */
         table {
             width: 100%;
@@ -151,7 +167,7 @@
         table td {
             background-color: #f8f9fa;
         }
-
+        
         /* Responsive table */
         @media (max-width: 768px) {
             table {
@@ -261,10 +277,9 @@
                                     <tr>
                                         <td>
                                             <div class="team">
-                                                <img src="jsk.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                <img src="jsk.png" alt="JS Kabylie Logo" style="width: 30px; height: 30px; margin-right: 10px;">
                                                 JS Kabylie vs. MC Alger
                                                 <img src="MCA.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
-
                                             </div>
                                         </td>
                                         <td>Date à définir</td>
@@ -275,7 +290,7 @@
                                             <div class="team">
                                                 <img src="MCA.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
                                                 MC Alger vs. Paradou AC
-                                                  <img src="pac.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                <img src="pac.png" alt="Paradou AC Logo" style="width: 30px; height: 30px; margin-right: 10px;">
                                             </div>
                                         </td>
                                         <td>Date à définir</td>
@@ -284,9 +299,9 @@
                                     <tr>
                                         <td>
                                             <div class="team">
-                                                <img src="csc.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                <img src="csc.png" alt="CS Constantine Logo" style="width: 30px; height: 30px; margin-right: 10px;">
                                                 CS Constantine vs. MC Alger
-                                      <img src="MCA.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                <img src="MCA.png" alt="MC Alger Logo" style="width: 30px; height: 30px; margin-right: 10px;">
                                             </div>
                                         </td>
                                         <td>Date à définir</td>
@@ -301,13 +316,19 @@
         </div>
     </section>
 
+    <section class="carousel-section">
+        <!-- Add your carousel here -->
+    </section>
+
     <footer class="text-center py-4">
         <p>&copy; 2024 Mouloudia Actualités. All rights reserved.</p>
     </footer>
 
+    <!-- JavaScript libraries -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
     <script>
         // Script to toggle dark mode and light mode
         const body = document.body;
