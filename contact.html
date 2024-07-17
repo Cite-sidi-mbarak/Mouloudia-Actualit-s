@@ -38,53 +38,26 @@
             padding: 80px 0;
         }
         
-        .contact-form {
+        .contact-info {
             max-width: 600px;
             margin: 0 auto;
             background-color: #fff;
             padding: 30px;
             border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
         
-        .contact-form h2 {
+        .contact-info h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
             text-align: center;
             color: #343a40;
         }
         
-        .contact-form label {
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .contact-form input[type="text"],
-        .contact-form input[type="email"],
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        
-        .contact-form textarea {
-            height: 150px;
-        }
-        
-        .contact-form button[type="submit"] {
-            background-color: #343a40;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .contact-form button[type="submit"]:hover {
-            background-color: #555;
+        .contact-info p {
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
         
         /* Dark Mode Styles */
@@ -105,7 +78,7 @@
             background-color: rgba(255, 255, 255, 0.1);
         }
         
-        body.dark-mode .contact-form {
+        body.dark-mode .contact-info {
             background-color: #424242;
             color: #fff;
             border-color: #757575;
@@ -149,23 +122,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <div class="contact-form">
+                    <div class="contact-info">
                         <h2>Contact Us</h2>
-                        <form action="#" method="POST">
-                            <div class="form-group">
-                                <label for="name">Your Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Your Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Your Message</label>
-                                <textarea id="message" name="message" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
+                        <p><strong>Address:</strong> 123 Example Street, City, Country</p>
+                        <p><strong>Phone:</strong> +1 234 567 890</p>
+                        <p><strong>Email:</strong> info@example.com</p>
                     </div>
                 </div>
             </div>
