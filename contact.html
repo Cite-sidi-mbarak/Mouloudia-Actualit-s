@@ -21,7 +21,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <a class="navbar-brand" href="#">
-                    <img id="navbar-logo" src="mca.png" alt="MCA Logo" style="width: 60px;">
+                    <img id="navbar-logo" src="mca-light.png" alt="MCA Logo" style="width: 60px;">
                 </a>
          
                 <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -96,9 +96,9 @@
         document.querySelector('.navbar-toggler').addEventListener('click', function() {
             body.classList.toggle('dark-mode');
             if (body.classList.contains('dark-mode')) {
-                navbarLogo.src = 'mca.png'; // Changer vers le logo sombre
+                navbarLogo.src = 'mca-dark.png'; // Changer vers le logo sombre
             } else {
-                navbarLogo.src = 'mca.png'; // Changer vers le logo clair
+                navbarLogo.src = 'mca-light.png'; // Changer vers le logo clair
             }
         });
 
@@ -106,9 +106,9 @@
         navbarLogo.addEventListener('click', function() {
             body.classList.toggle('dark-mode');
             if (body.classList.contains('dark-mode')) {
-                navbarLogo.src = 'mca.png'; // Changer vers le logo sombre
+                navbarLogo.src = 'mca-dark.png'; // Changer vers le logo sombre
             } else {
-                navbarLogo.src = 'mca.png'; // Changer vers le logo clair
+                navbarLogo.src = 'mca-light.png'; // Changer vers le logo clair
             }
         });
     </script>
